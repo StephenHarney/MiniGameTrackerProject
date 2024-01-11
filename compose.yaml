@@ -1,1 +1,25 @@
+version: '3.8'
 services:
+  game-service:
+    image: gametrackerprojecta:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - my_network
+
+  games-service:
+    image: gametrackerprojectb:latest
+    ports:
+      - "8082:8082"
+    networks:
+      - my_network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+       - "27017:27017"
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge
