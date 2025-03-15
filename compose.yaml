@@ -15,7 +15,7 @@ services:
       - my_network
 
   mongodb:
-    image: mongo:latest
+    image: mongodb/mongodb-community-server:5.0-ubuntu2004
     ports:
        - "27017:27017"
     networks:
